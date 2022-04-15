@@ -6,5 +6,6 @@ const validate = require('../../middlewares/validate')
 const { convert } = require('../../validations/converter')
 
 router.post('/', validate(convert), currencyController.convert)
+router.get('/currencies', currencyController.getAllCurrencies)
 
 module.exports = router

@@ -38,3 +38,17 @@ exports.convert = async(req, res) => {
         return responseHandler.internalServerError(res, e.message)
     }
 }
+
+exports.getAllCurrencies = async(req, res) => {
+
+    try {
+        let currencyConverter = new CurrencyConverter()
+
+        return responseHandler.sendSuccess(res, {
+            message: 'All Currencies',
+            data: currencyConverter
+        })
+    } catch(e) {
+        return responseHandler.internalServerError(res, e.message)
+    }
+}
